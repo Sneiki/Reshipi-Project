@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+    .carrusel {
+      position: relative;
+      width: 600px; /* ancho del carrusel */
+      margin: 20px auto;
+      overflow: hidden;
+      border-bottom: 3px solid #333; /* línea debajo */
+    }
+    .imagenes {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+    .imagenes img {
+      width: 200px;   /* ancho de cada imagen */
+      margin: 0 5px;  /* espacio entre imágenes */
+      flex-shrink: 0;
+    }
+    .flecha {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+    .flecha.izq { left: 0; }
+    .flecha.der { right: 0; }
+  </style>
+</head>
+<body>
+  <h2 id="postres">Postres</h2>
+  <div class="carrusel" data-visible="3">
+    <div class="imagenes">
+      <img src="tarta.jpg" alt="Tarta de manzana">
+      <img src="flan.jpg" alt="Flan casero">
+      <img src="brownie.jpg" alt="Brownie">
+      <img src="helado.jpg" alt="Helado de chocolate">
+      <img src="cheesecake.jpg" alt="Cheesecake">
+    </div>
+    <button class="flecha izq">&#10094;</button>
+    <button class="flecha der">&#10095;</button>
+  </div>
+
+  <h2 id="pastas">Pastas</h2>
+  <div class="carrusel" data-visible="2">
+    <div class="imagenes">
+      <img src="spaghetti.jpg" alt="Spaghetti boloñesa">
+      <img src="lasaña.jpg" alt="Lasaña">
+      <img src="ravioles.jpg" alt="Ravioles">
+    </div>
+    <button class="flecha izq">&#10094;</button>
+    <button class="flecha der">&#10095;</button>
+  </div>
+
+  <h2 id="ensaladas">Ensaladas</h2>
+  <div class="carrusel" data-visible="3">
+    <div class="imagenes">
+      <img src="cesar.jpg" alt="Ensalada César">
+      <img src="mixta.jpg" alt="Ensalada mixta">
+      <img src="caprese.jpg" alt="Ensalada Caprese">
+    </div>
+    <button class="flecha izq">&#10094;</button>
+    <button class="flecha der">&#10095;</button>
+  </div>
+
+  <script>
+    document.querySelectorAll(".carrusel").forEach(carrusel => {
+      const imagenes = carrusel.querySelector(".imagenes");
+      const imgs = carrusel.querySelectorAll("img");
+      let indice = 0;
+      const visible = parseInt(carrusel.dataset.visible);
+      const anchoImg = imgs[0].offsetWidth + 10; // ancho + margen
+
+      function mostrarImagen() {
+        imagenes.style.transform = `translateX(${-indice * anchoImg}px)`;
+      }
+
+      carrusel.querySelector(".flecha.izq").addEventListener("click", () => {
+        indice = (indice > 0) ? indice - 1 : imgs.length - visible;
+        mostrarImagen();
+      });
+
+      carrusel.querySelector(".flecha.der").addEventListener("click", () => {
+        indice = (indice < imgs.length - visible) ? indice + 1 : 0;
+        mostrarImagen();
+      });
+
+      // Movimiento automático cada 3 segundos
+      setInterval(() => {
+        indice = (indice < imgs.length - visible) ? indice + 1 : 0;
+        mostrarImagen();
+      }, 3000);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,596 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,800;1,800&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+    cursor: default;
+}
+
+html, body {
+    overflow-x: hidden;
+}
+main {
+    background-color: #2f9b83;
+    padding: 40px 20px;
+}
+.banner, main {
+    position: relative;
+    z-index: 1;
+}
+body{
+    background-color: #ecf0f1;
+    font-size: 16px;
+    letter-spacing: -.025em;
+}
+
+/* Estilo General para la Cabecera */
+.cabecera {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #218c74;
+}
+
+.logo-reshipi {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #353b48;
+    padding: 10px;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.cabecera nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.cabecera nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    font-size: 1;
+    gap: 30px;
+}
+
+/* Estilos para el formulario de búsqueda */
+form {
+    background-color: #fff;
+    width: 90%;
+    max-width: 400px;
+    height: 50px;
+    border-radius: 35px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 22px;
+    gap: 7px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    order: 4;
+    flex: 0 0 auto;
+}
+
+.cabecera #navigation li:hover, .cabecera h1:hover {
+    transform: scale(1.1);
+}
+
+.cabecera #navigation li a:hover {
+    color: #ffc048;
+}
+
+form input {
+    font-size: 1.5rem;
+    flex: 1;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+form button {
+    background-color: #fdcb6e;
+    border: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    order: -1;
+}
+
+button i {
+    color: #fff;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.banner, .cabecera {
+    background-color: #218c74;
+}
+
+.cabecera h1 {
+    margin: 0;
+    font-size: 3rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    color: #fdcb6e;
+}
+
+.cabecera h1 a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.cabecera nav a {
+    text-decoration: none;
+    color: #f7f1e3;
+    font-weight: bold;
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    overflow: visible;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+.cabecera nav a:hover,
+nav ul li:hover > a {
+    color: #ffd166;
+    transform: translateY(-1px);
+}
+.cabecera nav {
+    overflow: visible;
+}
+.cabecera nav ul {
+    flex-wrap: nowrap;
+    overflow: visible;
+}
+.cabecera nav ul li {
+    overflow: visible;
+}
+nav ul li {
+    position: relative;
+}
+
+nav ul li ul.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 8px 0;
+    background-color: rgba(255, 255, 255, 0.98);
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    z-index: 9999;
+    min-width: 240px;
+    width: max-content;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
+    display: none;
+    white-space: nowrap;
+    overflow: visible;
+}
+nav ul li:hover ul.dropdown {
+    display: block;
+}
+
+nav ul li ul.dropdown li {
+    position: relative;
+    display: block;
+    width: 100%;
+}
+nav ul li ul.dropdown li + li a {
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+nav ul li ul.dropdown li a {
+    padding: 12px 22px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1.5rem;
+    color: #222222;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.05);
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+nav ul li ul.dropdown li a:hover {
+    background-color: rgba(33, 140, 116, 0.12);
+    color: #165a45;
+}
+nav ul li ul.dropdown li ul.sub-dropdown {
+    position: absolute;
+    top: 0;
+    left: calc(100% - 2px);
+    display: none;
+    background: #ffffff;
+    border-radius: 0 12px 12px 0;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-left: 0;
+    min-width: 200px;
+    z-index: 10000;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
+    padding: 8px 0;
+    white-space: nowrap;
+}
+nav ul li ul.dropdown li:hover ul.sub-dropdown {
+    display: block;
+}
+/* Responsive: en pantallas menores a 768px */
+@media (max-width: 768px) {
+    .cabecera {
+        flex-wrap: wrap;
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .logo-reshipi {
+        flex: 0 0 auto;
+    }
+
+    .menu-toggle {
+        display: flex !important;
+        order: 2;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cabecera nav {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        order: 10;
+        background-color: #16a085;
+        padding: 15px;
+        border-top: 2px solid rgba(0,0,0,0.1);
+        margin-top: 10px;
+    }
+
+    .cabecera nav.active {
+        display: flex;
+    }
+    
+    .cabecera nav ul {
+        flex-direction: column;
+        gap: 5px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .cabecera nav a {
+        display: block;
+        width: 100%;
+        padding: 12px 100px;
+        border-radius: 8px;
+        font-size: 2rem;
+    }
+
+    .cabecera nav a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .cabecera form {
+        width: 100%;
+        order: 11;
+        max-width: 100%;
+        margin-top: 10px;
+    }
+
+    .cabecera form input {
+        flex: 1;
+    }
+}
+.headmozza-text {
+    display: flex;
+}
+
+.headmozza-text img {
+    width: 100%;
+    max-width: 400px;
+    margin-right: 15px;
+    height: auto;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    align-items: left;
+    display: flexbox;
+}
+.headmozza-text h2 {
+    font-size: 3rem;
+    color: #fdcb6e;
+    margin: 0;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    margin-bottom: 20px;
+}
+.headmozza-text h2::after {
+    content: '';
+    display: block;
+    width: 600px;
+    height: 4px;
+    background-color: #ffeaa7;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-top: 8px;
+    border-radius: 2px;
+}
+.headmozza-text p {
+    font-size: 1.2rem;
+    color: #e7e7e7;
+    line-height: 1.5;
+    font-weight: 500;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    margin-top: 10px;
+}
+.headmozza-text p::before {
+    content: '🍽️ ';
+}
+.headmozza-text p::after {
+    content: ' 🍽️';
+}
+.headmozza-text p::after {
+    content: "";
+    display: block;
+    width: 600px;
+    height: 2px;
+    background-color: #ffeaa7;
+    margin-top: 12px;
+    border-radius: 2px;
+}
+.stickdecoration {
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+    margin-top: 40px;
+}
+.stickdecoration img {
+    width: 950px;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.stickymozza {
+    display: flex;
+    align-items: flex-start;
+    gap: 40px;
+    margin: 40px auto;
+    justify-content: center;
+    max-width: 1200px;
+}
+.stickmozza-preparation, .stickmozza-ingredients {
+    flex: 1;
+    min-width: 0;
+}
+.stickymozza h3 {
+    font-size: 1.8rem;
+    color: #fdcb6e;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    position: relative;
+}
+.stickymozza h3::after {
+    content: '';
+    display: block;
+    width: 300px;
+    height: 2px;
+    background-color: #ffeaa7;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    margin-top: 8px;
+    border-radius: 2px;
+}
+.stickmozza-ingredients ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    font-size: 1.2rem;
+    color: #e7e7e7;
+    line-height: 1.5;
+    font-weight: 500;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+.stickmozza-ingredients ul li {
+    margin-bottom: 6px;
+}
+.stickmozza-preparation h4 {
+    font-size: 1.3rem;
+    color: #fdcb6e;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+.stickmozza-preparation p {
+    font-size: 1.2rem;
+    color: #e7e7e7;
+    line-height: 1.5;
+    font-weight: 500;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    margin: 0 0 12px 0;
+}
+.stickmozza-preparation p::before {
+    content: '🍳 ';
+}
+.stickmozza-preparation img {
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Responsive: en pantallas menores a 768px */
+@media (max-width: 768px) {
+  .recipe-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .stickmozza-ingredients,
+  .stickmozza-preparation {
+    width: 100%;
+  }
+}
+/* Estilo General Para Footer */
+footer {
+    background: linear-gradient(to top, #f5f5dc 30%, #2f9b83 70%);
+    background-color: #f7f1e3;
+    color: #353b48;
+    padding-top: 180px;
+    padding-bottom: 20px;
+    font-size: 14px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+footer .logo-reshipi {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+
+footer #footer-logo {
+    width: 40px;
+    height: 40px;
+    transform: translateY(-20%);
+    border-radius: 8px;
+}
+
+footer .logo-reshipi {
+    position: relative;
+    width: 100%;
+}
+
+footer #title-reshipi {
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    font-size: 35px;
+    font-weight: bold;
+    color: #fdcb6e;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+    margin-bottom: 10px;
+    z-index: 1;
+}
+
+footer .logo-reshipi::after {
+    content: "";
+    position: absolute;
+    left: calc(40px + 8px);
+    right: 0;
+    bottom: 6px;
+    height: 4px;
+    border-radius: 999px;
+    background: linear-gradient(270deg, #2f9b83, #1ed1aa, #f6e58d);
+}
+
+footer #reshipi-description {
+    font-family: 'Nunito', sans-serif;
+    font-size: 25px;
+    color: #f7f1e3;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+footer #footer-description {
+    font-family: 'Nunito', sans-serif;
+    font-size: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    color: #222222;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.column-link {
+    margin-top: 200px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 20px;
+    flex: 1;
+}
+.title-footer {
+    font-size: 3em;
+    color: #16a085;
+    text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.7);
+}
+.title-footer::after {
+    transform: translateY(-100%);
+    content: "";
+    display: block;
+    width: 100%;
+    border-radius: 4px;
+    height: 3px;
+    background: linear-gradient(to right, #2f9b83, transparent);
+}
+
+.list-footer {
+    list-style: none;
+    font-size: 20px;
+}
+.list-footer a{
+    cursor: pointer;
+    color: #222222;
+    font-style: italic;
+}
+
+.list-footer a:hover {
+    color: #16a085;
+}
+.list-footer a:visited{
+    color: #16a085;
+}
+
+.copyright {
+    text-align: center;
+    font-weight: initial;
+    font-style: italic;
+    margin-top: 20px;
+}
+/* Responsive para Footer en móvil */
+@media (max-width: 768px) {
+    footer {
+        padding-top: 80px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    footer #title-reshipi {
+        font-size: 20px;
+    }
+
+    footer #footer-description,
+    footer #reshipi-description {
+        margin-left: 0;
+        font-size: 1.5em;
+    }
+
+    .column-link {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-column {
+        margin: 20px 0;
+        text-align: center;
+    }
+}

@@ -1,0 +1,364 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,800;1,800&display=swap');
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0px;
+    box-sizing: border-box;
+    cursor: default;
+}
+
+html, body {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #218c74;
+}
+
+/* Estilo General para la Cabecera */
+.cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #218c74;
+}
+
+.logo-reshipi {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #353b48;
+    padding: 10px;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.cabecera nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    z-index: 1000;
+}
+
+.cabecera nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 30px;
+}
+
+/* Estilos para el formulario de búsqueda */
+form {
+    background-color: #fff;
+    width: 90%;
+    max-width: 400px;
+    height: 50px;
+    border-radius: 35px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 22px;
+    gap: 7px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    order: 4;
+    flex: 0 0 auto;
+    z-index: 1000;
+}
+
+.cabecera #navigation li:hover, .cabecera h1:hover {
+    transform: scale(1.1);
+}
+
+.cabecera #navigation li a:hover {
+    color: #ffc048;
+}
+
+form input {
+    font-size: 18px;
+    flex: 1;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+form button {
+    background-color: #fdcb6e;
+    border: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    order: -1;
+}
+
+button i {
+    color: #fff;
+    font-size: 18px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.banner, .cabecera {
+    background-color: #218c74;
+}
+
+.cabecera h1 {
+    margin: 0;
+    font-size: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    color: #fdcb6e;
+    z-index: 1000;
+}
+
+.cabecera h1 a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.cabecera nav a {
+    text-decoration: none;
+    color: #f7f1e3;
+    font-weight: bold;
+    font-size: 22px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+/* Responsive: en pantallas menores a 768px */
+@media (max-width: 768px) {
+    .cabecera {
+        flex-wrap: wrap;
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .logo-reshipi {
+        flex: 0 0 auto;
+    }
+
+    .menu-toggle {
+        display: flex !important;
+        order: 2;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cabecera nav {
+        display: none;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        order: 10;
+        background-color: #16a085;
+        padding: 15px;
+        border-top: 2px solid rgba(0,0,0,0.1);
+        margin-top: 10px;
+    }
+
+    .cabecera nav.active {
+        display: flex;
+    }
+    
+    .cabecera nav ul {
+        flex-direction: column;
+        gap: 5px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .cabecera nav a {
+        display: block;
+        width: 100%;
+        padding: 12px 100px;
+        border-radius: 8px;
+        font-size: 25px;
+    }
+
+    .cabecera nav a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .cabecera form {
+        width: 100%;
+        order: 11;
+        max-width: 100%;
+        margin-top: 10px;
+    }
+
+    .cabecera form input {
+        flex: 1;
+    }
+}
+
+.title-categories {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transform: translateY(-10%);
+}
+@keyframes slideUp {
+    from{transform: translateY(50px); opacity: 0;}
+    to{transform: translateY(0); opacity: 1;}
+}
+.title-categories h2 {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #f7f1e3;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+    animation: slideUp 1s ease-out;
+}
+.title-categories p {
+    font-size: 1.2rem;
+    color: #e7e7e7;
+    margin-top: 10px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+    animation: slideUp 1s ease-out;
+}
+.title-categories::after{
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #fdcb6e;
+    margin: 10px auto 0;
+    border-radius: 2px;
+    animation: slideUp 1s ease-out;
+}
+.scroll-down {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateY(-50%);
+    font-size: 4rem;
+    color: #ffeaa7;
+    text-decoration: none;
+    animation: bounce 1.5s infinite;
+}
+@keyframes bounce {
+    0%, 100% {
+        transform: translate(-50%, 0);}
+    50% {
+        transform: translate(-50%, -10px);
+    }
+}
+.title-recipes {
+    text-align: left;
+    margin: 20px;
+}
+.title-recipes h3:hover {
+    color: #fdcb6e;
+    transform: translateX(-4px) scale(1);
+}
+.title-recipes a:link, .title-recipes a:visited {
+    text-decoration: none;
+    color: inherit;
+}
+.title-recipes h3{
+    font-size: 2rem;
+    color: #f7f1e3;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    margin-bottom: 6px;
+    cursor: pointer;
+}
+.title-recipes h3::after{
+    content: "";
+    display: block;
+    width: 40vh;
+    height: 3px;
+    background: linear-gradient(270deg, #fdcb6e, #ccb384);
+    margin-top: 6px;
+    border-radius: 2px;
+
+}
+.title-recipes p {
+    font-size: 1rem;
+    color: #e7e7e7;
+    margin-top: 5px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
+
+.carrusel {
+  margin: 10px auto;
+  width: 90%;
+  border-radius: 20px;
+  position: relative; /* para posicionar flechas */
+}
+
+.imagenes {
+  overflow-x: auto;   /* aquí va el scroll */
+  scroll-behavior: smooth;
+  border-radius: 20px;
+}
+
+.imagenes::-webkit-scrollbar {
+  display: none; /* Chrome, Safari y Opera */
+}
+
+.imagecarousel {
+  display: flex;
+  gap: 1em;
+}
+
+.imagecarousel img {
+  height: 400px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.85);
+}
+
+.flecha {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  outline: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.flecha:active {
+    transform: translateY(-50%) scale(0.9);
+}
+.flecha:focus{
+    outline: none;
+    box-shadow: 0 0 0 3px #ffeaa7;
+}
+.flecha.izq { left: 10px; }
+.flecha.der { right: 10px; }
+
+.flecha:hover {
+  background: rgba(0,0,0,0.8);
+}
